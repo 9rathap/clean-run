@@ -1,0 +1,141 @@
+{
+  "name": "clean-run",
+  "displayName": "Clean Run",
+  "description": "Run your code in a visually clean terminal without losing scrollback history",
+  "version": "1.0.0",
+  "publisher": "clean-run",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Debuggers"
+  ],
+  "keywords": [
+    "run",
+    "terminal",
+    "clean",
+    "execute",
+    "python",
+    "javascript",
+    "typescript",
+    "java",
+    "go",
+    "rust"
+  ],
+  "icon": "resources/icon.png",
+  "activationEvents": [
+    "onCommand:clean-run.runActiveFile",
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "clean-run.runActiveFile",
+        "title": "Clean Run: Run Active File",
+        "icon": "$(play)",
+        "category": "Clean Run"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "clean-run.runActiveFile",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorFocus"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "clean-run.runActiveFile",
+          "group": "navigation@1",
+          "when": "resourceExtname =~ /\\.(py|js|ts|c|cpp|java|go|rs)$/"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "clean-run.runActiveFile",
+          "group": "z_commands@1"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "clean-run.runActiveFile"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Clean Run",
+      "properties": {
+        "cleanRun.cleanBeforeRun": {
+          "type": "boolean",
+          "default": true,
+          "description": "Clear the terminal (preserving scrollback) before running the file."
+        },
+        "cleanRun.reuseTerminal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Reuse an existing terminal instead of creating a new one each time."
+        },
+        "cleanRun.terminalName": {
+          "type": "string",
+          "default": "Clean Run",
+          "description": "Name of the terminal created by Clean Run."
+        },
+        "cleanRun.showNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show informational notifications when running files."
+        },
+        "cleanRun.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Clean Run status bar item."
+        },
+        "cleanRun.enabledLanguages": {
+          "type": "object",
+          "default": {
+            "python": true,
+            "javascript": true,
+            "typescript": true,
+            "c": true,
+            "cpp": true,
+            "java": true,
+            "go": true,
+            "rust": true
+          },
+          "description": "Enable or disable Clean Run for specific languages.",
+          "properties": {
+            "python": { "type": "boolean" },
+            "javascript": { "type": "boolean" },
+            "typescript": { "type": "boolean" },
+            "c": { "type": "boolean" },
+            "cpp": { "type": "boolean" },
+            "java": { "type": "boolean" },
+            "go": { "type": "boolean" },
+            "rust": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2",
+    "@vscode/vsce": "^2.22.0"
+  }
+}
