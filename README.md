@@ -135,6 +135,16 @@ Most shells treat ASCII character 12 (form feed, `\x0c`) identically to **Ctrl+L
 
 ---
 
+BEFORE:
+<img width="1512" height="982" alt="Screenshot 2026-06-17 at 1 32 54 AM" src="https://github.com/user-attachments/assets/f6159bb2-14de-4fd0-9279-be40fc48a18e" />
+USE CLEAN RUN:
+<img width="1512" height="982" alt="Screenshot 2026-06-17 at 1 33 19 AM" src="https://github.com/user-attachments/assets/642f334c-b246-4cca-87c1-28c56fc9e489" />
+AFTER:
+<img width="1512" height="982" alt="Screenshot 2026-06-17 at 1 33 28 AM" src="https://github.com/user-attachments/assets/959629ff-bb4a-4d5c-ae9e-582e54a70973" />
+
+
+
+
 ## License
 
 MIT
