@@ -2,6 +2,8 @@
 
 Run the file you're working on in a clean terminal without losing terminal history.
 
+`Cmd + Shift + R` (macOS) • `Ctrl + Shift + R` (Windows/Linux)
+
 Clean Run sends a **Ctrl+L form-feed** to the terminal before each execution, clearing the viewport while keeping previous output fully accessible by scrolling up. It works across Python, JavaScript, TypeScript, C, C++, Java, Go, and Rust.
 
 ---
