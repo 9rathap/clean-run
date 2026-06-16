@@ -1,4 +1,4 @@
-# Clean Run
+# Clean Run - NO MORE BASHING "CLEAR" IN THE TERMINAL
 
 Run the file you're working on in a clean terminal without losing terminal history.
 
