@@ -1,6 +1,6 @@
 # Clean Run
 
-Run your code in a visually clean terminal — without losing scrollback history.
+Run the file you're working on in a clean terminal without losing terminal history.
 
 Clean Run sends a **Ctrl+L form-feed** to the terminal before each execution, clearing the viewport while keeping previous output fully accessible by scrolling up. It works across Python, JavaScript, TypeScript, C, C++, Java, Go, and Rust.
 
